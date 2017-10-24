@@ -10,6 +10,7 @@ RUN curl -L https://github.com/coreos/etcd/releases/download/v${ETCD_VERSION}/et
     rm -rf etcd.tar.gz etcd-*
 
 COPY run.sh /bin/
+RUN chmod +x /bin/run.sh
 
 VOLUME /data
 
