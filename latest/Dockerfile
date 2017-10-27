@@ -9,8 +9,8 @@ RUN curl -L https://github.com/coreos/etcd/releases/download/v${ETCD_VERSION}/et
     /bin/etcd --version && \
     rm -rf etcd.tar.gz etcd-*
 
-COPY run.sh /bin/
-RUN chmod +x /bin/run.sh
+COPY entrypoint.sh /bin/
+RUN chmod +x /bin/entrypoint.sh
 
 VOLUME /data
 
@@ -19,4 +19,4 @@ EXPOSE 2379 2380 4001 7001
 ENV MIN_SEEDS_COUNT 2
 ENV ETCDCTL_API=3
 
-ENTRYPOINT ["/bin/run.sh"]
+ENTRYPOINT ["/bin/entrypoint.sh"]
