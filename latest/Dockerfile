@@ -1,7 +1,7 @@
 FROM nethost/alpine:3.6
 MAINTAINER billgo <cocobill@vip.qq.com>
 
-RUN apk --no-cache add bind-tools
+RUN apk --no-cache add curl wget jq bind-tools
 ENV ETCD_VERSION 3.2.9
 RUN curl -L https://github.com/coreos/etcd/releases/download/v${ETCD_VERSION}/etcd-v${ETCD_VERSION}-linux-amd64.tar.gz -o etcd.tar.gz && \
     tar xzf etcd.tar.gz && \
